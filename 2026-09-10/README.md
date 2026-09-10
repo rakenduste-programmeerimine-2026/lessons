@@ -13,6 +13,8 @@ Work in pairs. Each group has one topic and prepares a presentation with a short
 - Checking types with `typeof`.
 - The difference between `null` and `undefined`.
 - The difference between `"5"` and `5`.
+- Two quirks: `typeof null` and `typeof []` both return `"object"`.
+- Checking whether a value is an array with `Array.isArray()`.
 
 ## 3. Operators and Type Conversion
 - Arithmetic operators: `+`, `-`, `*`, `/`, `%`, and `**`.
@@ -21,52 +23,50 @@ Work in pairs. Each group has one topic and prepares a presentation with a short
 - Comparing `"5" + 2` with `Number("5") + 2`.
 - What `NaN` means.
 
-## 4. Strings and Template Literals
+## 4. Strings and Template Literals — Solo Topic
 - Creating strings with single quotes, double quotes, and backticks.
 - Using `.length`, `.trim()`, `.toLowerCase()`, and `.includes()`.
 - Inserting values into strings with `${variable}`.
-- Example: cleaning up user input and building a greeting.
+- Example: cleaning up a name and building a greeting.
 
-## 5. Comparisons and Logical Operators
+## 5. Comparisons, Logical Operators, and Decisions
 - Comparison operators: `===`, `!==`, `>`, `<`, `>=`, and `<=`.
 - Why prefer `===` over `==`.
 - Logical operators: `&&`, `||`, and `!`.
 - Truthy and falsy values, including `""`, `0`, `null`, and `undefined`.
-
-## 6. Decisions: if, else, and the Ternary Operator
 - Using `if`, `else if`, and `else`.
-- Using `condition ? valueA : valueB`.
-- Choosing between conditional statements and a ternary expression.
-- Example: choosing a message based on whether a user is logged in.
+- Using `condition ? valueA : valueB` for a simple choice.
+- Example: checking a user's age and login status to choose a message.
 
-## 7. Numbers and the Math Object
+## 6. Numbers and the Math Object
 - Using `Math.round()`, `Math.floor()`, and `Math.ceil()`.
 - Finding values with `Math.min()` and `Math.max()`.
 - Understanding the range of `Math.random()`.
 - Example: generating a random whole number from 1 to 6.
 
-## 8. Arrays: Storing Lists
+## 7. Arrays and Loops
 - Creating arrays and accessing items by index.
 - Zero-based indexing and `.length`.
 - Using `.includes()`, `.push()`, and `.pop()`.
 - Which operations change the original array?
-- Example: managing a list of names.
+- Iterating over an array with `for` and `for...of`.
+- Understanding a `for` loop's counter, condition, and update.
+- Using `break` and avoiding infinite loops.
+- Example: creating a list of names, updating it, and printing each name.
 
-## 9. Objects: Storing Structured Information
+## 8. Objects and Handling Missing Data
 - Creating an object with properties and values.
 - Reading properties with dot and bracket notation.
 - Adding and updating properties.
 - Accessing nested objects.
 - What happens when a property does not exist?
+- Reading nested properties safely with optional chaining: `?.`.
+- Providing default values with nullish coalescing: `??`.
+- Comparing `value ?? fallback` with `value || fallback`,
+  including when the value is `0`, `false`, or `""`.
+- Example: displaying a user profile with missing information.
 
-## 10. Loops: Repeating Work
-- Using `for` and `for...of`.
-- Understanding a loop's counter, condition, and update.
-- Using `break`.
-- Avoiding infinite loops.
-- Example: printing each item in an array.
-
-## 11. Functions: Reusable Behavior
+## 9. Functions: Reusable Behavior
 - Declaring and calling functions.
 - Parameters versus arguments.
 - Default parameter values.
@@ -74,21 +74,21 @@ Work in pairs. Each group has one topic and prepares a presentation with a short
 - The difference between `return` and `console.log()`.
 - What a function returns without an explicit `return`.
 
-## 12. Arrow Functions and Callbacks
+## 10. Arrow Functions and Callbacks
 - Function expressions and arrow function syntax.
 - Implicit returns versus explicit `return`.
 - Comparing `x => x * 2` with `x => { return x * 2; }`.
 - Callbacks: passing a function to another function.
 - Example: using a callback with `.forEach()`.
 
-## 13. Array Methods: map, filter, and find
+## 11. Array Methods: map, filter, and find
 - Transforming items with `.map()`.
 - Selecting matching items with `.filter()`.
 - Getting the first matching item with `.find()`.
 - What each method returns, including when nothing matches.
 - Example: transforming and searching a list of products.
 
-## 14. Destructuring and Spread Syntax
+## 12. Destructuring and Spread Syntax
 - Extracting values with object and array destructuring.
 - Copying arrays and objects with `...`.
 - Creating a new array with an additional item.
@@ -96,21 +96,14 @@ Work in pairs. Each group has one topic and prepares a presentation with a short
 - Why a `const` object can still be modified.
 - Why spread creates a shallow copy.
 
-## 15. Handling Missing Data: Optional Chaining and Nullish Coalescing
-- Reading nested properties safely with `?.`.
-- Providing default values with `??`.
-- Comparing `value ?? fallback` with `value || fallback`.
-- What happens with `0`, `false`, and `""`?
-- Example: displaying a user profile with missing information.
-
-## 16. Modules: import and export
+## 13. Modules: import and export
 - Splitting code into multiple files.
 - Named exports and imports.
 - Default exports and imports.
 - Matching import syntax to the export.
 - Example: exporting a helper function and importing it in another file.
 
-## 17. Asynchronous JavaScript: Promises and async/await
+## 14. Asynchronous JavaScript: Promises and async/await
 - Why some operations finish later.
 - What a promise represents.
 - Promise states: pending, fulfilled, and rejected.
@@ -118,7 +111,7 @@ Work in pairs. Each group has one topic and prepares a presentation with a short
 - Why an `async` function always returns a promise.
 - Example: awaiting a provided promise and using its result.
 
-## 18. Fetching Data, JSON, and Error Handling
+## 15. Fetching Data, JSON, and Error Handling
 - Requesting data with `fetch()`.
 - Checking `response.ok`.
 - Reading JSON with `await response.json()`.
