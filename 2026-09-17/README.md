@@ -1,4 +1,4 @@
-# Lesson #2: React and Node.js: Group Learning Assignments
+# Lesson #2: React: Group Learning Assignments
 
 ## Organisation
 
