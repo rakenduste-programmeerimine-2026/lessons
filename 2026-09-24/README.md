@@ -366,3 +366,106 @@ Save tasks and load them again after restarting the program.
 ### Completion requirement
 
 Tasks survive a restart. Tests use a temporary file rather than real user data.
+
+## 13. Environment Variables and Backend Configuration
+
+### Research and explain
+
+- What is an environment variable?
+- How does Node.js read values through `process.env`?
+- Why are environment variable values strings?
+- Why should configuration be separate from application logic?
+- What is `.env.example`, and why should secrets stay out of Git?
+
+### Demonstrate
+
+Make these settings configurable:
+
+- `PORT`: the server port, defaulting to `3000`.
+- `TASKS_FILE`: the task data file path, defaulting to `./data/tasks.json`.
+
+Use the teacher-provided environment-loading setup.
+
+### Completion requirement
+
+- The application works with the default settings.
+- Changing `PORT` changes the server's port.
+- Changing `TASKS_FILE` changes where tasks are saved and loaded.
+- The README explains both settings.
+- `.env.example` contains example configuration without secrets.
+
+### Connection to our project
+
+The same backend can run with different settings without editing its routes.
+
+## 14. Handling Missing and Corrupted Data Files
+
+### Research and explain
+
+- Briefly recap `async`, `await` and `try/catch`.
+- What is the difference between a missing file and invalid JSON?
+- How can the error code `ENOENT` identify a missing file?
+- Why should other errors not silently return an empty array?
+- Why must corrupted data not be automatically overwritten?
+
+### Demonstrate
+
+Extend Topic 12's file-loading function:
+
+loadTasks(filePath)
+
+Demonstrate three situations:
+
+1. A valid file containing a task array.
+2. A file that does not exist.
+3. A file containing invalid JSON.
+
+### Completion requirement
+
+- A valid task array is returned.
+- A missing file returns an empty array.
+- Invalid JSON produces a clear error.
+- Valid JSON that is not an array produces a clear error.
+- Other file errors are propagated instead of returning an empty array.
+- Loading never creates, modifies or overwrites the file.
+
+### Connection to our project
+
+The backend handles missing data gracefully while reporting corrupted data
+instead of silently discarding it.
+
+## 15. Testing Saving and Loading with a Temporary File
+
+### Research and explain
+
+- Why should tests avoid the application's real data file?
+- What is a temporary directory?
+- Why must tests use their own data?
+- Why should cleanup happen even when a test fails?
+
+### Demonstrate
+
+Use the teacher-provided testing setup and Topic 12's save/load functions.
+
+Write one test that:
+
+1. Creates a unique temporary directory.
+2. Saves two tasks to a JSON file inside it.
+3. Loads the tasks from that file.
+4. Checks that the loaded tasks match the original tasks.
+5. Removes the temporary directory afterward.
+
+Use the teacher-provided cleanup code.
+
+### Completion requirement
+
+- The test runs automatically without starting the Express server.
+- The loaded data matches the saved data.
+- The test passes repeatedly.
+- The application's real task file is never changed.
+- Temporary files are removed even if an assertion fails.
+
+### Connection to our project
+
+Automated tests can verify persistence without affecting existing task data
+or other test runs.
