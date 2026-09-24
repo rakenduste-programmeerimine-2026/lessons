@@ -394,3 +394,81 @@ Create:
 ### Completion requirement
 
 The component displays its title and any supplied children.
+
+## 13. useRef and Focusing an Input
+
+### Research and explain
+
+- What is `useRef`?
+- How can a ref access an input element?
+- How does a ref differ from state?
+- Why does changing `ref.current` not trigger a render?
+
+### Demonstrate
+
+Add a button labelled `Add a task` that focuses the task title input.
+Use `useRef` and the input element's `.focus()` method.
+
+### Completion requirement
+
+Clicking the button moves keyboard focus to the task title input.
+
+### Connection to our project
+
+Users can immediately start typing a new task without clicking the input.
+
+## 14. Remembering a Preference with localStorage
+
+### Research and explain
+
+- What is `localStorage`?
+- How do `getItem()` and `setItem()` work?
+- Why does localStorage store values as strings?
+- How is stored data different from React state?
+- Why should sensitive information not be stored here?
+
+### Demonstrate
+
+Remember the selected task filter:
+
+- all;
+- completed;
+- incomplete.
+
+Read the saved preference when the component first initialises.
+Save changes using an effect.
+
+### Completion requirement
+
+- Changing the filter updates the displayed tasks.
+- Refreshing the page preserves the selected filter.
+- A missing or invalid saved preference defaults to `all`.
+
+### Connection to our project
+
+Store only the user's display preference. Task data will come from the backend.
+
+## 15. Testing One React Component
+
+### Research and explain
+
+- What does a component test check?
+- What are `render`, `screen` and `expect`?
+- Why should a test check visible behaviour?
+- What is the difference between a passing and failing test?
+
+### Demonstrate
+
+Use the teacher-provided Vitest and React Testing Library setup.
+
+Write two tests for `TaskCard`:
+
+1. The supplied task title appears.
+2. Clicking the delete button calls `onDelete` with the task's ID.
+
+Use a mock callback to observe the second behaviour.
+
+### Completion requirement
+
+Both tests pass for the correct component.
+Demonstrate one failing test by temporarily breaking the component.
